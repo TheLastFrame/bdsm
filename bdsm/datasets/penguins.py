@@ -68,6 +68,42 @@ class PenguinsDataFrame(pd.DataFrame):
 
 
 def penguins():
+    """
+    Penguins data
+
+    Predicting the species of penguines from physical measurements. Includes nesting
+    observations from Palmer Station Antarctica LTER and K. Gorman., penguin size data,
+    and isotope measurements from blood samples for adult Adélie, Chinstrap, and Gentoo penguins.
+
+    Description
+    -----------
+    346 rows, 17 columns
+
+    Given is the attribute name, attribute type, the measurement unit and a
+    brief description. 
+    The species is the value to predict (as a classification problem).
+    (Descriptions are from the original dataset)
+
+	Name			Data Type	Meas.	Description
+	----			---------	-----	-----------
+	studyName		string			Sampling expedition from which data were collected, generated, etc.
+ 	Sample Number		integer			continuous numbering sequence for each sample
+	Species			string			penguin species
+	Region			string			region of Palmer LTER sampling grid
+	Island			string			island near Palmer Station where samples were collected
+	Stage			string			reproductive stage at sampling
+	Individual ID		string			unique ID for each individual in dataset
+	Clutch Completion	string			denoting if the study nest observed with a full clutch, i.e., 2 eggs
+	Date Egg		date			denoting the date study nest observed with 1 egg (sampled)
+	Culmen Length		float		mm	length of the dorsal ridge of a bird's bill
+	Culmen Depth		float		mm	depth of the dorsal ridge of a bird's bill
+	Flipper Length		integer		mm	length penguin flipper
+	Body Mass		integer		grams	penguin body mass
+	Sex			string			sex of an animal
+	Delta 15 N		float			the measure of the ratio of stable isotopes 15N:14N
+	Delta 13 C		float			the measure of the ratio of stable isotopes 13C:12C
+	Comments		string			text providing additional relevant information for data
+    """
     data_file = _load_file('penguins.csv')
     
     df = PenguinsDataFrame(pd.read_csv(data_file))
