@@ -33,8 +33,9 @@ class PenguinsDataFrame(pd.DataFrame):
                 df[col] = df[col].astype('float')
                 df[col] = df[col].fillna(df.groupby('Species')[col].transform('mean'))
             
-            # NA: unknown
+            # Rename NA and . to Unknown
             df['Sex'] = np.where(df['Sex'].isna(), 'Unknown', df['Sex'].str.title())
+            df['Sex'] = np.where(df['Sex'] == ".", 'Unknown', df['Sex'].str.title())
             
             # unneeded columns
             df = df.drop(df.columns[[0, 1, 3, 5, 6, 7, 8, 14, 15, 16]], axis = 1)
