@@ -149,3 +149,7 @@ playground
 
 # ignore jupyter notebooks in parent folder for local tryouts
 /*.ipynb
+
+# ignore pipenv
+Pipfile
+Pipfile.lock
